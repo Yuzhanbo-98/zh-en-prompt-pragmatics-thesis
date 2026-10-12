@@ -66,9 +66,8 @@ Figures are computed from the released coding sheet ([`analysis.ipynb`](analysis
 
 1. **English prompts are mostly direct commands; Chinese prompts are mostly polite requests.** English users appear to strip politeness when the addressee is an AI ("Write about productivity."), while Chinese users keep everyday politeness routines ("请帮我写一篇……").
 2. **Explanation: how far politeness is grammaticalised.** In English, *please / could / would* are detachable add-ons and easy to drop. In Chinese, 请帮我 has fused into a request construction, so removing it makes the sentence sound unnatural.
-3. **Metapragmatic control is largely shared.** Role setting, format constraints and step requirements show no significant difference between the languages, which suggests they are *instrumental* strategies driven by task complexity rather than culture. A small difference shows up in phrasing: English "Act as…" (a temporary role) vs. Chinese "你是…" ("you are", an assigned identity).
-4. **Format constraints: no reliable difference.** The thesis text reports slightly more format constraints in Chinese prompts and reads this as a compensatory strategy of high-context communicators. The released data show no significant difference (22% vs. 18%, p = .62), so this interpretation remains a hypothesis.
-5. **CASA, refined.** Users do transfer social norms to AI, but *how* they transfer them depends on language and culture: English users adapt to the addressee, while Chinese users keep the same norms.
+3. **Metapragmatic control is shared across languages.** Role setting (24% vs. 20%), format constraints (22% vs. 18%) and step requirements (14% vs. 22%) show no significant difference, which suggests they are *instrumental* strategies driven by task complexity rather than culture. Where the two languages differ is in phrasing, not frequency: English "Act as…" (a temporary role) vs. Chinese "你是…" ("you are", an assigned identity).
+4. **CASA, refined.** Users do transfer social norms to AI, but *how* they transfer them depends on language and culture: English users adapt to the addressee, while Chinese users keep the same norms.
 
 ## Contributions
 
@@ -86,12 +85,9 @@ Figures are computed from the released coding sheet ([`analysis.ipynb`](analysis
 
 The prompts are short texts that users published publicly on Reddit and Xiaohongshu; no usernames or other personal information are included.
 
-### Note on figures
+### Data notes
 
-The percentages above are recomputed from the released coding sheet. They differ somewhat from those printed in the thesis text. For example, the thesis reports 64% direct strategies in English prompts, while the sheet gives 80%. The direction and significance of the main findings are the same. Inter-coder reliability reproduces exactly: κ = 0.643 / 0.681 / 0.771 / 0.625 / 0.692 for AP1–AP5, with AP3 computed on 19 pairs because one code was left blank.
-
-Data notes:
-
+- All figures in this README are computed from the released coding sheet and supersede the percentages in the submitted thesis text. Inter-coder reliability: κ = 0.643 / 0.681 / 0.771 / 0.625 / 0.692 for AP1–AP5 (AP3 on 19 pairs because one code was left blank).
 - Two English prompts (EN49, EN50) were missing from the original sheet. They were coded afterwards following the coding manual, and their `coding_note` says so.
 - EN04 and EN28 are the same prompt. Removing EN28 does not change any result (see the notebook).
 
