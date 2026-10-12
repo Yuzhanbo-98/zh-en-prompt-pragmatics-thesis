@@ -4,7 +4,7 @@
 Faculty of Foreign Languages, **Tomsk State University**, Russia · 2026
 Author: **Yu Zhanbo** · Supervisor: Prof. Olga V. Nagel, Doctor of Philology
 
-> This repository summarises the thesis: research questions, corpus, coding scheme and main findings. The full text is not published here.
+> This repository contains a summary of the thesis together with the **coded corpus** and a **reproducible analysis notebook**. The full thesis text is not published here.
 
 **Keywords:** contrastive pragmatics · prompts · speech acts · politeness · human–AI interaction · corpus analysis · Chinese · English
 
@@ -44,27 +44,30 @@ Prompts have become the main way ordinary users talk to large language models (L
   | AP5 | Step requirement | yes / no |
 
 - **Inter-coder reliability:** two coders double-coded 20 pilot prompts (10 Chinese, 10 English); Cohen's κ = 0.625–0.771 across dimensions (mean **κ = 0.682**, "good" agreement by Landis & Koch).
-- **Analysis:** frequency comparison (quantitative), followed by qualitative interpretation of individual prompts.
+- **Analysis:** frequency comparison with chi-square tests and effect sizes (quantitative), followed by qualitative interpretation of individual prompts.
 - **Theoretical framework:** Speech Act Theory (Austin, Searle), politeness theory (Leech; Brown & Levinson; Gu Yueguo), Verschueren's adaptation theory and metapragmatic awareness, and Computers Are Social Actors (CASA; Nass & Moon).
 
 ## Key findings
 
-| Dimension | Chinese (n = 50) | English (n = 50) |
-|---|---|---|
-| Command | 16% | **56%** |
-| Request | **64%** | 18% |
-| Suggestion | 4% | 0% |
-| Other (e.g. "I need…", "I want you to…") | 16% | 26% |
-| Direct strategy | 24% | **64%** |
-| Indirect strategy | **76%** | 36% |
-| Role setting | 28% | 28% |
-| Format constraint | 28% | 20% |
-| Step requirement | 16% | 18% |
+Figures are computed from the released coding sheet ([`analysis.ipynb`](analysis.ipynb)). Tests are chi-square tests of independence; the effect size is Cramér's V (φ for 2 × 2 tables).
+
+| Dimension | Chinese (n = 50) | English (n = 50) | Test |
+|---|---|---|---|
+| Command | 30% | **60%** | AP1: χ²(2) = 23.09, p < .001, V = 0.48 |
+| Request | **52%** | 8% | |
+| Other (e.g. "I need…", "I want you to…") | 18% | 32% | |
+| Direct strategy | 38% | **80%** | χ²(1) = 18.23, p < .001, φ = 0.43 |
+| Indirect strategy | **62%** | 20% | |
+| Role setting | 24% | 20% | χ²(1) = 0.23, p = .63 (n.s.) |
+| Format constraint | 22% | 18% | χ²(1) = 0.25, p = .62 (n.s.) |
+| Step requirement | 14% | 22% | χ²(1) = 1.08, p = .30 (n.s.) |
+
+![Pragmatic profile of English and Chinese prompts](figures/pragmatic_profile.svg)
 
 1. **English prompts are mostly direct commands; Chinese prompts are mostly polite requests.** English users appear to strip politeness when the addressee is an AI ("Write about productivity."), while Chinese users keep everyday politeness routines ("请帮我写一篇……").
 2. **Explanation: how far politeness is grammaticalised.** In English, *please / could / would* are detachable add-ons and easy to drop. In Chinese, 请帮我 has fused into a request construction, so removing it makes the sentence sound unnatural.
-3. **Metapragmatic control is largely shared.** Role setting and step requirements occur at almost identical rates, which suggests they are *instrumental* strategies driven by task complexity rather than culture. A small difference shows up in phrasing: English "Act as…" (a temporary role) vs. Chinese "你是…" ("you are", an assigned identity).
-4. **Chinese users add slightly more format constraints**, which the thesis interprets as a compensatory strategy: high-context communicators make their expectations explicit for a model that cannot "read between the lines".
+3. **Metapragmatic control is largely shared.** Role setting, format constraints and step requirements show no significant difference between the languages, which suggests they are *instrumental* strategies driven by task complexity rather than culture. A small difference shows up in phrasing: English "Act as…" (a temporary role) vs. Chinese "你是…" ("you are", an assigned identity).
+4. **Format constraints: no reliable difference.** The thesis text reports slightly more format constraints in Chinese prompts and reads this as a compensatory strategy of high-context communicators. The released data show no significant difference (22% vs. 18%, p = .62), so this interpretation remains a hypothesis.
 5. **CASA, refined.** Users do transfer social norms to AI, but *how* they transfer them depends on language and culture: English users adapt to the addressee, while Chinese users keep the same norms.
 
 ## Contributions
@@ -73,11 +76,30 @@ Prompts have become the main way ordinary users talk to large language models (L
 - A reusable **five-dimension coding scheme** for prompt pragmatics that can be applied to other languages.
 - Practical implications for **multilingual prompt design** and for the **localisation** of Chinese-facing AI products (e.g. better handling of indirect requests).
 
+## Data and code
+
+| File | Contents |
+|---|---|
+| [`data/prompt_corpus_coded.csv`](data/prompt_corpus_coded.csv) | 100 prompts (EN01–EN50, ZH01–ZH50) with codes on AP1–AP5; `pilot_sample` marks the 20 double-coded prompts |
+| [`data/pilot_double_coding.csv`](data/pilot_double_coding.csv) | Independent codes from two coders on the 20 pilot prompts |
+| [`analysis.ipynb`](analysis.ipynb) | Distributions, chi-square and Fisher tests, Cohen's κ, figure |
+
+The prompts are short texts that users published publicly on Reddit and Xiaohongshu; no usernames or other personal information are included.
+
+### Note on figures
+
+The percentages above are recomputed from the released coding sheet. They differ somewhat from those printed in the thesis text. For example, the thesis reports 64% direct strategies in English prompts, while the sheet gives 80%. The direction and significance of the main findings are the same. Inter-coder reliability reproduces exactly: κ = 0.643 / 0.681 / 0.771 / 0.625 / 0.692 for AP1–AP5, with AP3 computed on 19 pairs because one code was left blank.
+
+Data notes:
+
+- Two English prompts (EN49, EN50) were missing from the original sheet. They were coded afterwards following the coding manual, and their `coding_note` says so.
+- EN04 and EN28 are the same prompt. Removing EN28 does not change any result (see the notebook).
+
 ## Limitations and next steps
 
-- Small corpus (100 prompts) and descriptive statistics only; the differences have not yet been tested for significance (e.g. chi-square).
+- Small corpus (100 prompts), manually collected from two platforms. Task type and platform metadata were not retained per prompt.
 - Inter-coder agreement was measured on a 20-prompt pilot; the full corpus was coded by one researcher.
-- Next steps: a larger corpus, significance testing, and testing whether these pragmatic differences change **LLM output quality**.
+- Next steps: a larger corpus, a second coder for the full set, and testing whether these pragmatic differences change **LLM output quality**.
 
 ## Citation
 
