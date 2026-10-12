@@ -1,0 +1,21 @@
+id,lang,prompt,AP1_coder1,AP1_coder2,AP2_coder1,AP2_coder2,AP3_coder1,AP3_coder2,AP4_coder1,AP4_coder2,AP5_coder1,AP5_coder2
+EN01,EN,Write about productivity.,command,command,direct,direct,no,no,no,no,no,no
+EN02,EN,Please write a short blog post intro explaining three time-management techniques for remote workers.,request,request,indirect,indirect,no,no,no,no,no,no
+EN03,EN,Rewrite this like you're having a friendly conversation with someone you know well,command,command,direct,direct,no,no,no,no,no,no
+EN04,EN,Summarize the following using this structure: 1. Key Idea 2. Insights 3. Action Items,command,command,direct,direct,no,no,yes,yes,yes,yes
+EN05,EN,Extract information and return in a 3-column table: Column 1: Item Column 2: Description Column 3: Notes,command,command,direct,direct,no,no,yes,yes,no,no
+EN06,EN,"Act as a poet who is inspired by small, everyday moments. Write a short, 4-verse poem about the feeling of finding a forgotten $10 bill in an old jacket pocket. Please use a simple AABB rhyme scheme",request,request,indirect,indirect,yes,yes,yes,yes,no,yes
+EN07,EN,Explain this as if you're chatting with a colleague over coffee,command,command,direct,direct,no,yes,no,no,no,no
+EN08,EN,"Turn these notes into a clear, well-written paragraph. Avoid adding new ideas.",command,command,direct,indirect,no,no,no,yes,no,no
+EN09,EN,Please write a sample report for IELTS writing examination.,request,request,indirect,direct,no,no,no,no,no,no
+EN10,EN,"Write an email asking for a meeting. Result: Polite, Safe, and Forgettable",command,other,direct,indirect,no,no,no,no,no,no
+ZH01,ZH,请帮我写一篇关于[主题]的文章 需要包括以下部分：背景介绍，主要观点，具体分析，总结展望,request,request,indirect,indirect,no,,yes,yes,yes,yes
+ZH02,ZH,请在保持原意的基础上扩展文章内容，添加更多的案例和数据支持,request,request,indirect,indirect,no,no,no,no,no,no
+ZH03,ZH,请为这篇文章生成10个吸引人的标题,request,request,indirect,indirect,no,no,no,no,no,no
+ZH04,ZH,请补充相关数据来支持文章观点,request,request,indirect,indirect,no,no,no,no,no,no
+ZH05,ZH,请为我设计一个“古代经商”题材的小说。主角是现代女CEO，穿越到古代一个没落的商家之家。故事的核心是她利用现代商业思维，在古代打造自己的商业帝国。请提供几个可行的商业方向,request,request,indirect,indirect,no,no,no,no,no,yes
+ZH06,ZH,用“我”作为第一人称是写故事，故事涵盖事情的起因，经过，结果，并详细讲述故事的情节,command,suggestion,direct,direct,no,no,no,yes,yes,yes
+ZH07,ZH,你是一个擅长写情感短篇故事的小说家，请根据我给出的标题写小说大纲。请等待我的标题输入，听明白了吗？ 明白回复,request,command,indirect,indirect,yes,yes,no,no,no,no
+ZH08,ZH,我想写一个18岁到22岁女性爱看的校园甜宠文，小说总字数10万字，文章分为10大卷，请帮我生成一个故事的大纲。这里写什么文自己定,request,suggestion,indirect,indirect,no,no,yes,no,no,no
+ZH09,ZH,请帮我整理以下会议内容的要点和后续工作安排,request,request,indirect,indirect,no,no,no,no,no,no
+ZH10,ZH,请帮我写一封[目的]的邮件，语气要专业礼貌,request,request,indirect,indirect,no,no,no,no,no,no
